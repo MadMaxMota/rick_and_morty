@@ -19,6 +19,16 @@ The application consumes the [Rick and Morty API](https://rickandmortyapi.com/) 
 
 The main goal of this project is to demonstrate how I structure a Flutter application using **Clean Architecture**, while implementing real-world concepts such as infinite scrolling, state management, caching, asynchronous operations, and API integration.
 
+## 🎥 App Demo
+<img width="275" height="604" alt="image" src="https://github.com/user-attachments/assets/3db1e149-7f6e-4175-8cb0-b79f3f0bb5a7" />
+
+
+
+
+
+
+
+
 ## ✨ Features
 
 * Character listing
