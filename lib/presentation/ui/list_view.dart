@@ -16,7 +16,6 @@ class _ListViewWidgetState extends State<ListViewWidget> {
   @override
   void initState() {
     super.initState();
-
     _scrollController.addListener(_onScroll);
     context.read<CharactersCubit>().loadFirstPage();
   }
@@ -57,13 +56,18 @@ class _ListViewWidgetState extends State<ListViewWidget> {
             final bool isLoadingMore = state.isLoadingMore;
 
             return ListView.builder(
-              itemCount: state.charactersList.length + (isLoadingMore ? 1 : 0),
               controller: _scrollController,
+              itemCount: state.charactersList.length + 1,
               itemBuilder: (context, index) {
-                if (index == state.charactersList.length) {
-                  return Center(child: const CircularProgressIndicator());
+                if (index < state.charactersList.length) {
+                  return CharacterCard(character: state.charactersList[index]);
                 }
-                return CharacterCard(character: state.charactersList[index]);
+                return isLoadingMore
+                    ? const Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Center(child: CircularProgressIndicator()),
+                      )
+                    : const SizedBox.shrink();
               },
             );
           }
