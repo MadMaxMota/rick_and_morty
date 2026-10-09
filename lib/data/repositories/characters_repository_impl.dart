@@ -22,7 +22,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
         return right(cachedResponse);
       }
 
-      final PaginatedResponse<CharacterEntity> remoteResponse = await remoteDataSource.getCharactersFromDataSource(currentPage: page);
+      final PaginatedResponse<CharacterEntity> remoteResponse = await remoteDataSource.getCharacters(currentPage: page);
 
       await localDataSource.saveCharacters(page: page, response: remoteResponse);
 

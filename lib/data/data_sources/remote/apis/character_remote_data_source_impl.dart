@@ -12,7 +12,7 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
   CharacterRemoteDataSourceImpl({required this.httpClient});
 
   @override
-  Future<PaginatedResponse<CharacterEntity>> getCharactersFromDataSource({int currentPage = 1}) async {
+  Future<PaginatedResponse<CharacterEntity>> getCharacters({int currentPage = 1}) async {
     try {
       final String path = 'https://rickandmortyapi.com/api/character';
       final Response<dynamic> response = await httpClient.get(path, queryParameters: <String, dynamic>{'page': currentPage});
