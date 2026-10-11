@@ -6,7 +6,7 @@ class PaginatedResponse<T> {
   final List<T> itemsList;
 
   bool get isEmpty => itemsList.isEmpty && totalRows == 0;
-  double get progress => totalPages > 0 ? (currentPage + 1) / totalPages : 0.0;
+  double get progress => totalPages > 0 ? (currentPage) / totalPages : 0.0;
   bool get hasMore => currentPage < totalPages;
 
   PaginatedResponse({required this.totalPages, required this.currentPage, this.pageSize = 10, this.totalRows, required this.itemsList});

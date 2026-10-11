@@ -57,10 +57,10 @@ class _ListViewWidgetState extends State<ListViewWidget> {
 
             return ListView.builder(
               controller: _scrollController,
-              itemCount: state.charactersList.length + 1,
+              itemCount: state.currentResponse.itemsList.length + 1,
               itemBuilder: (context, index) {
-                if (index < state.charactersList.length) {
-                  return CharacterCard(character: state.charactersList[index]);
+                if (index < state.currentResponse.itemsList.length) {
+                  return CharacterCard(character: state.currentResponse.itemsList[index]);
                 }
                 return isLoadingMore
                     ? const Padding(

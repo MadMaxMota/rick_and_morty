@@ -7,10 +7,10 @@ class CharactersInitial extends CharactersState {}
 class CharactersLoading extends CharactersState {}
 
 class CharactersLoaded extends CharactersState {
-  final List<CharacterEntity> charactersList;
+  final PaginatedResponse<CharacterEntity> currentResponse;
   final bool isLoadingMore;
 
-  CharactersLoaded({required this.charactersList, this.isLoadingMore = false});
+  CharactersLoaded({required this.currentResponse, this.isLoadingMore = false});
 }
 
 class CharactersError extends CharactersState {}
